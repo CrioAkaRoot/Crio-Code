@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SyntaxDefinition name="Lua" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="Comment" foreground="#6A9955"/>
+    <Color name="String" foreground="#CE9178"/>
+    <Color name="Keyword" foreground="#569CD6"/>
+    <Color name="Function" foreground="#DCDCAA"/>
+    <Color name="Number" foreground="#B5CEA8"/>
+    <Color name="Operator" foreground="#D4D4D4"/>
+    <Color name="Variable" foreground="#9CDCFE"/>
+    <Color name="Type" foreground="#4EC9B0"/>
+    
+    <RuleSet>
+        <Span color="Comment" begin="--" end="\n"/>
+        <Span color="Comment" multiline="true" begin="--\[\[" end="]]"/>
+        
+        <Span color="String">
+            <Begin>"</Begin>
+            <End>"</End>
+            <RuleSet>
+                <Span begin="\\" end="."/>
+            </RuleSet>
+        </Span>
+        <Span color="String">
+            <Begin>'</Begin>
+            <End>'</End>
+            <RuleSet>
+                <Span begin="\\" end="."/>
+            </RuleSet>
+        </Span>
+        <Span color="String" multiline="true">
+            <Begin>\[\[</Begin>
+            <End>]]</End>
+        </Span>
+        
+        <Keywords color="Keyword">
+            <Word>and</Word>
+            <Word>break</Word>
+            <Word>do</Word>
+            <Word>else</Word>
+            <Word>elseif</Word>
+            <Word>end</Word>
+            <Word>false</Word>
+            <Word>for</Word>
+            <Word>function</Word>
+            <Word>goto</Word>
+            <Word>if</Word>
+            <Word>in</Word>
+            <Word>local</Word>
+            <Word>nil</Word>
+            <Word>not</Word>
+            <Word>or</Word>
+            <Word>repeat</Word>
+            <Word>return</Word>
+            <Word>then</Word>
+            <Word>true</Word>
+            <Word>until</Word>
+            <Word>while</Word>
+        </Keywords>
+
+        <Keywords color="Function">
+            <Word>assert</Word>
+            <Word>collectgarbage</Word>
+            <Word>dofile</Word>
+            <Word>error</Word>
+            <Word>getmetatable</Word>
+            <Word>ipairs</Word>
+            <Word>load</Word>
+            <Word>loadfile</Word>
+            <Word>next</Word>
+            <Word>pairs</Word>
+            <Word>pcall</Word>
+            <Word>print</Word>
+            <Word>rawequal</Word>
+            <Word>rawget</Word>
+            <Word>rawlen</Word>
+            <Word>rawset</Word>
+            <Word>require</Word>
+            <Word>select</Word>
+            <Word>setmetatable</Word>
+            <Word>tonumber</Word>
+            <Word>tostring</Word>
+            <Word>type</Word>
+            <Word>xpcall</Word>
+            
+            <Word>string.byte</Word>
+            <Word>string.char</Word>
+            <Word>string.dump</Word>
+            <Word>string.find</Word>
+            <Word>string.format</Word>
+            <Word>string.gmatch</Word>
+            <Word>string.gsub</Word>
+            <Word>string.len</Word>
+            <Word>string.lower</Word>
+            <Word>string.match</Word>
+            <Word>string.pack</Word>
+            <Word>string.packsize</Word>
+            <Word>string.rep</Word>
+            <Word>string.reverse</Word>
+            <Word>string.sub</Word>
+            <Word>string.unpack</Word>
+            <Word>string.upper</Word>
+            
+            <Word>table.concat</Word>
+            <Word>table.insert</Word>
+            <Word>table.move</Word>
+            <Word>table.pack</Word>
+            <Word>table.remove</Word>
+            <Word>table.sort</Word>
+            <Word>table.unpack</Word>
+            
+            <Word>math.abs</Word>
+            <Word>math.acos</Word>
+            <Word>math.asin</Word>
+            <Word>math.atan</Word>
+            <Word>math.ceil</Word>
+            <Word>math.cos</Word>
+            <Word>math.deg</Word>
+            <Word>math.exp</Word>
+            <Word>math.floor</Word>
+            <Word>math.fmod</Word>
+            <Word>math.huge</Word>
+            <Word>math.log</Word>
+            <Word>math.max</Word>
+            <Word>math.min</Word>
+            <Word>math.modf</Word>
+            <Word>math.pi</Word>
+            <Word>math.rad</Word>
+            <Word>math.random</Word>
+            <Word>math.randomseed</Word>
+            <Word>math.sin</Word>
+            <Word>math.sqrt</Word>
+            <Word>math.tan</Word>
+            <Word>math.tointeger</Word>
+            <Word>math.type</Word>
+            <Word>math.ult</Word>
+            
+            <Word>io.close</Word>
+            <Word>io.flush</Word>
+            <Word>io.input</Word>
+            <Word>io.lines</Word>
+            <Word>io.open</Word>
+            <Word>io.output</Word>
+            <Word>io.popen</Word>
+            <Word>io.read</Word>
+            <Word>io.tmpfile</Word>
+            <Word>io.type</Word>
+            <Word>io.write</Word>
+        </Keywords>
+
+        <Keywords color="Keyword">
+            <Word>game</Word>
+            <Word>workspace</Word>
+            <Word>script</Word>
+            <Word>Instance</Word>
+            <Word>Vector3</Word>
+            <Word>CFrame</Word>
+            <Word>Color3</Word>
+            <Word>Enum</Word>
+            <Word>Ray</Word>
+            <Word>Region3</Word>
+            <Word>TweenInfo</Word>
+            <Word>UDim2</Word>
+        </Keywords>
+        
+        <Rule color="Number">
+            \b0[xX][0-9a-fA-F]+|    \b(\d+(\.[0-9]+)?|\.[0-9]+)([eE][+-]?[0-9]+)?
+        </Rule>
+        
+        <Rule color="Operator">
+            [+\-*/%^#=&lt;&gt;~]|and|or|not|\.\.|&lt;=|&gt;=|~=|==
+        </Rule>
+    </RuleSet>
+</SyntaxDefinition> 
